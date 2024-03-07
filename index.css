@@ -18,18 +18,12 @@
 
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     display: none;
-}
-
-.title_holder{
-
-    width: 100%;
-    padding: 12px 0px;
 }
 
 .float_preview_holder{
@@ -43,11 +37,19 @@
     position: relative;
 }
 
+
 .close_btn{
 
     position: absolute;
     /* top: 0; */
-    left: 96%;
+    margin-left: 91.5%;
+
+}
+
+.title_holder{
+
+    width: 100%;
+    padding: 12px 0px;
 }
 
 .poster_content_holder{
@@ -70,7 +72,7 @@
 
     height: 64vh;
     width: 100%;
-    background-color: #8591d6;
+    /* background-color: #8591d6; */
     overflow: hidden;
 }
 
@@ -89,7 +91,7 @@ p{
 
     padding: 20px 0px;
     width: 100%;
-    background-color: #8591d6;
+    /* background-color: #8591d6; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,3 +219,53 @@ i:hover{
     
 }
 
+
+
+/* Adding new movies CSS */
+
+.add_movie_main{
+
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+
+.add_movie_holder{
+
+    width: 60%;
+    height: 78vh;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.inp{
+
+    width: 48%;
+    padding: 10px 0px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid grey;
+    margin-top: 20px;
+    text-indent: 15px;
+    column-gap: 2%;  
+}
+
+
+.big_inp{
+
+    width: 96.5%;
+    height: 140px;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid grey;
+    margin-bottom: 20px;
+}

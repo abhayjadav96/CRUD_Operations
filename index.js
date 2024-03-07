@@ -295,8 +295,8 @@ function openmodel(movieid){
   document.getElementById("float_preview").style.display="flex";
 }
 
-function closewin(){
+function closewin(modeel){
 
-  document.getElementById("float_preview").style.display="none";  
+  document.getElementById(modeel).style.display="none";  
 
-}
+} 
