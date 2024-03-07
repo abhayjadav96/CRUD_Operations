@@ -1,7 +1,8 @@
 let movies = [
   {
-    title: "Anand",
-    year: "1971",
+    id:1,
+    title: "Pathan",
+    year: "2023",
     genres: ["Drama"],
     ratings: [
       5, 6, 8, 1, 2, 5, 8, 2, 8, 6, 10, 6, 3, 7, 6, 4, 1, 10, 3, 6, 5, 3, 9, 8,
@@ -19,9 +20,10 @@ let movies = [
     actors: ["Rajesh Khanna", "Amitabh Bachchan", "Sumita Sanyal"],
     imdbRating: 8.9,
     posterurl:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE0Mzk3OTk2NF5BMl5BanBnXkFtZTgwMTQ1NDk5NTE@._V1_SY250_CR0,0,187,250_AL_.jpg",
+      "https://filmfare.wwmindia.com/content/2022/dec/pathaan11669878737.jpg",
   },
   {
+    id:2,
     title: "Dangal",
     year: "2016",
     genres: ["Action", "Biography", "Drama"],
@@ -41,10 +43,11 @@ let movies = [
     actors: ["Aamir Khan", "Sakshi Tanwar", "Fatima Sana Shaikh"],
     imdbRating: 8.9,
     posterurl:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_SY500_CR0,0,356,500_AL_.jpg",
+      "https://m.media-amazon.com/images/I/51oYfMKJbhL._AC_UF894,1000_QL80_.jpg",
   },
   {
-    title: "Drishyam",
+    id:3,
+    title: "Drishyam 2",
     year: "2013",
     genres: ["Crime", "Drama", "Thriller"],
     ratings: [
@@ -63,10 +66,11 @@ let movies = [
     actors: ["Mohanlal", "Meena", "Ansiba"],
     imdbRating: 8.9,
     posterurl:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BYmY3MzYwMGUtOWMxYS00OGVhLWFjNmUtYzlkNGVmY2ZkMjA3XkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_SX330_CR0,0,330,432_AL_.jpg",
+      "https://stat5.bollywoodhungama.in/wp-content/uploads/2022/09/Drishyam-2-1.jpg",
   },
   {
-    title: "Nayakan",
+    id:4,
+    title: "Jawan",
     year: "1987",
     genres: ["Crime", "Drama"],
     ratings: [
@@ -85,10 +89,11 @@ let movies = [
     actors: ["Kamal Haasan", "Saranya Ponvannan", "Delhi Ganesh"],
     imdbRating: 8.9,
     posterurl:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BNTI2Zjc5ODMtNGE0NC00YjU5LTk0NjktZjU4ZDRlZDFkZWU0XkEyXkFqcGdeQXVyNjc5Mjg4Nzc@._V1_SY480_SX320_AL_.jpg",
+      "https://filmfare.wwmindia.com/content/2023/aug/jawan11691407607.jpg",
   },
   {
-    title: "Anbe Sivam",
+    id:5,
+    title: "Bad Boys",
     year: "2003",
     genres: ["Adventure", "Comedy", "Drama"],
     ratings: [
@@ -107,9 +112,10 @@ let movies = [
     actors: ["Kamal Haasan", "Madhavan", "Kiran Rathod"],
     imdbRating: 8.9,
     posterurl:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BNWQxY2MyNmUtOTkxZC00MmQ3LWFkMjMtNWU3YmFlZDM5YTBhXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_SX352_CR0,0,352,499_AL_.jpg",
+      "https://stat4.bollywoodhungama.in/wp-content/uploads/2020/02/Bad-Boys-for-Life-English-306x393.jpg",
   },
   {
+    id:6,
     title: "Gol Maal",
     year: "1979",
     genres: ["Comedy", "Romance"],
@@ -132,6 +138,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA4OTczODgxNF5BMl5BanBnXkFtZTgwMDAzMTU2NDE@._V1_SY250_CR0,0,187,250_AL_.jpg",
   },
   {
+    id:7,
     title: "Black Friday",
     year: "2004",
     genres: ["Crime", "Drama", "Thriller"],
@@ -154,6 +161,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMmU1NDhjYTQtYjQxYy00MjlmLWIxMjItMjllMmE2NDRlY2ZhXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SY500_SX400_AL_.jpg",
   },
   {
+    id:8,
     title: "Taare Zameen Par",
     year: "2007",
     genres: ["Drama", "Family", "Music"],
@@ -176,6 +184,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BNTVmYTk2NjAtYzY3MS00YjFjLTlkYzktYzg3YzMyZDQyOWRiXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_SY500_CR0,0,346,500_AL_.jpg",
   },
   {
+    id:9,
     title: "Jaane Bhi Do Yaaro",
     year: "1983",
     genres: ["Comedy", "Drama"],
@@ -241,6 +250,8 @@ function displaydata(movieArr){
 
     let view=document.createElement("i");
     view.classList.add("fa-solid", "fa-eye");
+    view.onclick=openmodel.bind(this, movie.id);
+    
 
     let editTD=document.createElement("i");
     editTD.classList.add("fa-solid", "fa-pen-to-square");
@@ -262,3 +273,30 @@ function displaydata(movieArr){
 
 displaydata(movies);
 
+
+
+function openmodel(movieid){
+
+  let movie=movies.find((movie,index)=>{
+
+    return movie.id===movieid;
+  });
+
+  // console.log(movie);
+  document.getElementById("title").innerText=movie.title;
+  document.getElementById("poster").src=movie.posterurl;
+  document.getElementById("genres").innerText=movie.genres;
+  document.getElementById("storyline").innerText=movie.storyline;
+  document.getElementById("actor").innerText=movie.actors;
+  document.getElementById("releasedate").innerText=movie.releaseDate;
+  document.getElementById("imdbrating").innerText=movie.imdbRating;
+  document.getElementById("avgrating").innerText=movie.averageRating;
+
+  document.getElementById("float_preview").style.display="flex";
+}
+
+function closewin(){
+
+  document.getElementById("float_preview").style.display="none";  
+
+}
