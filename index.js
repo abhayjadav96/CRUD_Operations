@@ -300,3 +300,9 @@ function closewin(modeel){
   document.getElementById(modeel).style.display="none";  
 
 } 
+
+function openAddMovieModel(){
+
+  document.getElementById("add_movie_float_preview").style.display="flex";
+
+}

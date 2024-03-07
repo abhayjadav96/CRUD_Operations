@@ -138,6 +138,7 @@ p{
     width: 100%;
     padding: 10px 10%;
     /* background-color: lightgrey; */
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -161,7 +162,7 @@ p{
 
 .btn{
     
-    padding: 20px 30px;
+    padding: 15px 20px;
     background-color: #28326a;
     border: none;
     outline: none;
@@ -211,12 +212,13 @@ tbody>tr:nth-child(even){
 
 i{
     margin-left: 10px;
+    color: black;
 }
 
 i:hover{
 
     cursor: pointer;
-    
+    color: blue;
 }
 
 
@@ -232,7 +234,7 @@ i:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
+    display: none;
 }
 
 .add_movie_holder{
