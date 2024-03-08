@@ -82,23 +82,27 @@
 
             </div>
 
-            <div class="add_movie_content_holder">
+            <form id="add_form">
 
-                <h1 class="title_text">Add New Movie</h1>
+                <div class="add_movie_content_holder">
 
-                <input type="text" placeholder="Enter Title" class="inp">
-                <input type="text" placeholder="Enter Genres seperated by ',' " class="inp">
-                <input type="number" placeholder="Enter Duration" class="inp">
-                <input type="text" placeholder="Enter Release Date" class="inp">
-                <input type="text" placeholder="Enter Actors seperated by ','" class="inp">
-                <input type="number" placeholder="Enter IMDB Rating" class="inp">
-                <input type="url" placeholder="Enter Poster URL" class="inp" style="width:96.5%;">
+                    <h1 class="title_text">Add New Movie</h1>
 
-                <textarea class="big_inp" placeholder="Enter Story Line"></textarea>
+                    <input type="text" placeholder="Enter Title" class="inp" id="AddMovieTitle">
+                    <input type="text" placeholder="Enter Genres seperated by ',' " class="inp" id="AddMovieGenre">
+                    <input type="number" placeholder="Enter Duration" class="inp"id="AddMovieDuration">
+                    <input type="text" placeholder="Enter Release Date" onfocus="converttodate()" class="inp" id="AddMovieDate">
+                    <input type="text" placeholder="Enter Actors seperated by ','" class="inp" id="AddMovieActor">
+                    <input type="number" placeholder="Enter IMDB Rating" class="inp" id="AddMovieimdbrating">
+                    <input type="url" placeholder="Enter Poster URL" class="inp" style="width:96.5%;" id="AddMovieUrl">
 
-                <button class="btn">Submit Movie</button>
+                    <textarea class="big_inp" placeholder="Enter Story Line" id="AddMovieStoryline"></textarea>
 
-            </div>
+                    <button class="btn" onclick="addmovie()">Submit Movie</button>
+
+                </div>
+            
+            </form>
 
         </div>
 
