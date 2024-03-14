@@ -136,9 +136,9 @@ p{
 .data{
 
     width: 100%;
-    padding: 10px 10%;
+    padding: 60px 10%;
     /* background-color: lightgrey; */
-    margin-top: 50px;
+    /* margin-top: 50px; */
     display: flex;
     flex-direction: column;
 }
@@ -147,7 +147,7 @@ p{
 
     width: 100%;
     /* background-color: green; */
-    height: 90px;
+    /* height: 90px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -238,7 +238,7 @@ i:hover{
     display: none;
 }
 
-.add_movie_holder{
+.add_movie_holder, .update_movie_holder{
 
     width: 60%;
     height: 78vh;

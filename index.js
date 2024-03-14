@@ -16,7 +16,7 @@ let movies = [];
     displaydata(movies);
   }
 
-
+// -----------------------------------------------FUNCTION TO CREATE TABLE----------------------------------------------
 
 function displaydata(movieArr){
 
@@ -52,10 +52,6 @@ function displaydata(movieArr){
     imdbratingTD.append(movie.imdbRating);
     row.appendChild(imdbratingTD);
 
-    let contentratingTD=document.createElement("td");
-    contentratingTD.append(movie.contentRating);
-    row.appendChild(contentratingTD);
-
     let actionTD=document.createElement("td");
 
     let view=document.createElement("i");
@@ -65,6 +61,7 @@ function displaydata(movieArr){
 
     let editTD=document.createElement("i");
     editTD.classList.add("fa-solid", "fa-pen-to-square");
+    editTD.onclick = updatemodel.bind(this,movie.id)
 
     let trash=document.createElement("i");
     trash.classList.add("fa-solid", "fa-trash");
@@ -81,6 +78,8 @@ function displaydata(movieArr){
   });
 }
 
+// -----------------------------------------------------FUNCTION TO DISPLAY DATA----------------------------------------------------------
+
 displaydata(movies);
 
 
@@ -92,7 +91,6 @@ function openmodel(movieid){
     return movie.id===movieid;
   });
 
-  // console.log(movie);
   document.getElementById("title").innerText=movie.title;
   document.getElementById("poster").src=movie.posterurl;
   document.getElementById("genres").innerText=movie.genres;
@@ -104,6 +102,9 @@ function openmodel(movieid){
 
   document.getElementById("float_preview").style.display="flex";
 }
+
+
+// -------------------------------  open& close -----------------------------------------------------------------------------
 
 function closewin(modeel){
 
@@ -117,10 +118,14 @@ function openAddMovieModel(){
 
 }
 
+// ---------------------------------------------------dATE cONVERSION----------------------------------------------------
+
 function converttodate(){
 
   document.getElementById("AddMovieDate").type="date";
 }
+
+// ----------------------------------------------------------ADD MOVIE FUNCTION--------------------------------------------------
 
 function addmovie(){
 
@@ -144,8 +149,10 @@ function addmovie(){
   movie.duration=document.getElementById("AddMovieDuration").value;
   movie.releaseDate=document.getElementById("AddMovieDate").value;
   movie.actors=document.getElementById("AddMovieActor").value.split(",");
+  movie.imdbRating=document.getElementById("AddMovieimdbrating").value;
   movie.posterurl=document.getElementById("AddMovieUrl").value;
   movie.storyline=document.getElementById("AddMovieStoryline").value;
+
 
   movies.push(movie);
   console.log(movies);
@@ -156,7 +163,7 @@ function addmovie(){
   document.getElementById("add_form").reset();
 }
 
-// ------------------------------------function to Edit ---------------------------------------------------
+// ------------------------------------function to DELETE ---------------------------------------------------
 
 function deleteData(id){
 
@@ -165,7 +172,65 @@ function deleteData(id){
   })
 
   movies.splice(index,1);
-
   displaydata(movies);
   localStorage.setItem("movies",JSON.stringify(movies));
 } 
+
+
+
+// ----------------------------------------------------Update Movie: ----------------------------------
+
+let dataToUpdate=null;
+
+function updatemodel(id){
+
+  
+  let movieid=movies.find((movie,index)=>{
+
+    return movie.id===id;
+  });
+
+  dataToUpdate=movieid;
+
+  let genres="";
+  movieid.genres.forEach((genre,index)=>{
+
+  genres+=genre+ ", ";
+  // genres=genres.slice(0,-1);
+  })
+
+  let actors="";
+  movieid.actors.forEach((actor,index)=>{
+    actors+= actor+ " , ";
+  })
+
+  document.getElementById("UpdateMovieTitle").value=movieid.title;
+  document.getElementById("UpdateMovieGenre").value=movieid.genres;
+  document.getElementById("UpdateMovieDuration").value=movieid.duration;
+  document.getElementById("UpdateMovieDate").value=movieid.releaseDate;
+  document.getElementById("UpdateMovieActor").value=movieid.actors;
+  document.getElementById("UpdateMovieimdbrating").value=movieid.imdbRating;
+  document.getElementById("UpdateMovieUrl").value=movieid.posterurl;
+  document.getElementById("UpdateMovieStoryline").value=movieid.storyline;
+
+  document.getElementById("update_movie_float_preview").style.display="flex";
+}
+
+function updatedata(){
+
+  dataToUpdate.title=document.getElementById("UpdateMovieTitle").value;
+  dataToUpdate.genres=document.getElementById("UpdateMovieGenre").value.split(",");
+  dataToUpdate.duration=document.getElementById("UpdateMovieDuration").value;
+  dataToUpdate.releaseDate=document.getElementById("UpdateMovieDate").value;
+  dataToUpdate.actors=document.getElementById("UpdateMovieActor").value.split(",");
+  dataToUpdate.imdbRating=document.getElementById("UpdateMovieimdbrating").value;
+  dataToUpdate.posterurl=document.getElementById("UpdateMovieUrl").value;
+  dataToUpdate.storyline=document.getElementById("UpdateMovieStoryline").value;
+
+
+  console.log(dataToUpdate);
+  localStorage.setItem("movies",JSON.stringify(movies));
+
+  displaydata(movies);
+  closewin("update_movie_float_preview");
+}

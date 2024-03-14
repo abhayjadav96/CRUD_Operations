@@ -108,15 +108,45 @@
 
     </section>
 
-    <section>
 
-        <div class="header">
 
-            <!-- <div class="logo">
-                ADMIN PANEL
-            </div> -->
+    <section class="add_movie_main" id="update_movie_float_preview">
+
+        <div class="update_movie_holder">
+
+            <div class="close_btn">
+
+                <i onclick="closewin('update_movie_float_preview')" class="fa-solid fa-circle-xmark"></i>
+
+            </div>
+
+            <form id="add_form">
+
+                <div class="add_movie_content_holder">
+
+                    <h1 class="title_text">Add New Movie</h1>
+
+                    <input type="text" placeholder="Enter Title" class="inp" id="UpdateMovieTitle">
+                    <input type="text" placeholder="Enter Genres seperated by ',' " class="inp" id="UpdateMovieGenre">
+                    <input type="number" placeholder="Enter Duration" class="inp"id="UpdateMovieDuration">
+                    <input type="text" placeholder="Enter Release Date" onfocus="converttodate()" class="inp" id="UpdateMovieDate">
+                    <input type="text" placeholder="Enter Actors seperated by ','" class="inp" id="UpdateMovieActor">
+                    <input type="number" placeholder="Enter IMDB Rating" class="inp" id="UpdateMovieimdbrating">
+                    <input type="url" placeholder="Enter Poster URL" class="inp" style="width:96.5%;" id="UpdateMovieUrl">
+
+                    <textarea class="big_inp" placeholder="Enter Story Line" id="UpdateMovieStoryline"></textarea>
+
+                    <button type="button" class="btn" onclick="updatedata()">Update Movie</button>
+
+                </div>
+            
+            </form>
 
         </div>
+
+    </section>
+
+    <section>
 
         <div class="data">
 
@@ -146,7 +176,6 @@
                         <th>Genres</th>
                         <th>Duration</th>
                         <th>IMDB Rating</th>
-                        <th>Content Rating</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -158,7 +187,6 @@
         </div>
 
     </section>
-
 
     <script src="./index.js"></script>
 </body>
