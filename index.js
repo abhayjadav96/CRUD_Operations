@@ -234,3 +234,35 @@ function updatedata(){
   displaydata(movies);
   closewin("update_movie_float_preview");
 }
+
+
+// ---------------------------------------Filter Functions------------------------------------------------------------
+
+let filterstatus=false;
+
+function FloatFilterFunction(){
+
+
+  if(filterstatus==false){
+
+    document.getElementById("filter_section").style.marginLeft="0px";
+    filterstatus=true;
+  }
+  else{
+
+    document.getElementById("filter_section").style.marginLeft="-25%";
+    filterstatus=false;
+  }
+
+}
+
+
+// -------------------------------------------FUNCTION TO CAPTURE DROPDOWN LIST------------------------------------
+
+let genre=null;
+
+function capturedropdowngenre(genre, index){
+
+  document.getElementById()
+
+}

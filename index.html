@@ -146,6 +146,45 @@
 
     </section>
 
+    <section class="filter_section" id="filter_section">
+
+        <div class="filter_container">
+
+            <h1>SELECT FILTERS</h1>
+
+            <select class="dropdown_filter" id="filter_genres" onchange="capturedropdowngenre('genre', this.value)">
+
+                <option class="filter_option" value="Action">SELECT GENRES</option>
+                <option class="filter_option" value="Action">Action</option>
+                <option class="filter_option" value="Action">Drama</option>
+                <option class="filter_option" value="Action">Suspense</option>
+                <option class="filter_option" value="Action">Comedy</option>
+                <option class="filter_option" value="Action">Inspirational</option>
+                <option class="filter_option" value="Action">Spritiual</option>
+
+            </select>
+
+            <select class="dropdown_filter" id="filter_rating">
+
+                <option class="filter_option" value="Action">Rating</option>
+                <option class="filter_option" value="Action">>5</option>
+                <option class="filter_option" value="Action">>6</option>
+                <option class="filter_option" value="Action">>7</option>
+                <option class="filter_option" value="Action">>8</option>
+                <option class="filter_option" value="Action">>9</option>
+
+            </select>
+
+            <div>
+
+                <button class="btn filter_data_btn">Filter</button>
+            
+            </div>
+
+        </div>
+
+    </section>
+
     <section>
 
         <div class="data">
@@ -156,9 +195,16 @@
                     ALL MOVIES
                 </h1>
 
-                <button class="btn" onclick="openAddMovieModel()">
-                    ADD NEW MOVIES
-                </button>
+                <div class="header_btn">
+
+                    <button class="btn" onclick="FloatFilterFunction()">
+                        FILTER DATA
+                    </button>
+
+                    <button class="btn" onclick="openAddMovieModel()">
+                        ADD NEW MOVIES
+                    </button>
+                </div>
 
             </div>
         </div>
@@ -185,6 +231,7 @@
                 </tbody>
             </table>
         </div>
+        
 
     </section>
 
