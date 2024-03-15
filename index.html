@@ -152,26 +152,26 @@
 
             <h1>SELECT FILTERS</h1>
 
-            <select class="dropdown_filter" id="filter_genres" onchange="capturedropdowngenre('genre', this.value)">
+            <select class="dropdown_filter" id="filter_genres" onchange="capturedropdown('genre', this.value)">
 
-                <option class="filter_option" value="Action">SELECT GENRES</option>
+                <option class="filter_option" value="SELECT GENRES">SELECT GENRES</option>
                 <option class="filter_option" value="Action">Action</option>
-                <option class="filter_option" value="Action">Drama</option>
-                <option class="filter_option" value="Action">Suspense</option>
-                <option class="filter_option" value="Action">Comedy</option>
-                <option class="filter_option" value="Action">Inspirational</option>
-                <option class="filter_option" value="Action">Spritiual</option>
+                <option class="filter_option" value="Drama">Drama</option>
+                <option class="filter_option" value="Suspense">Suspense</option>
+                <option class="filter_option" value="Comedy">Comedy</option>
+                <option class="filter_option" value="Inspirational">Inspirational</option>
+                <option class="filter_option" value="Spritiual">Spritiual</option>
 
             </select>
 
-            <select class="dropdown_filter" id="filter_rating">
+            <select class="dropdown_filter" id="filter_rating" onchange="capturedropdown('ratings', this.value)">
 
                 <option class="filter_option" value="Action">Rating</option>
-                <option class="filter_option" value="Action">>5</option>
-                <option class="filter_option" value="Action">>6</option>
-                <option class="filter_option" value="Action">>7</option>
-                <option class="filter_option" value="Action">>8</option>
-                <option class="filter_option" value="Action">>9</option>
+                <option class="filter_option" value="5">Less than 6</option>
+                <option class="filter_option" value="6">Less than 7</option>
+                <option class="filter_option" value="7">Less than 8</option>
+                <option class="filter_option" value="8">Less than 9</option>
+                <option class="filter_option" value="9">Less than 10</option>
 
             </select>
 

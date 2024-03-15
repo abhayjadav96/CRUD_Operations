@@ -259,10 +259,21 @@ function FloatFilterFunction(){
 
 // -------------------------------------------FUNCTION TO CAPTURE DROPDOWN LIST------------------------------------
 
-let genre=null;
+let filters={
 
-function capturedropdowngenre(genre, index){
+  genre:null,
+  ratings:null
+}
 
-  document.getElementById()
+function capturedropdown(property, value){
 
+  if(property.value!==null){
+
+    filters[property]=value;
+  }
+
+  else{
+    filters[property]=null;
+  }
+  console.log(filters);
 }
