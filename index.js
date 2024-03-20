@@ -1,20 +1,25 @@
+
 let movies = [];
 
-  if(localStorage.getItem("movies")!==null){
+    if(localStorage.getItem("movies")!==null){
 
-    movies=JSON.parse(localStorage.getItem("movies"));
-  }
-  else{
-    localStorage.setItem("movies",JSON.stringify(movies));
-  }
+      movies=JSON.parse(localStorage.getItem("movies"));
+    }
+    else{
+      localStorage.setItem("movies",JSON.stringify(movies));
+    }
 
-  if(movies.length===0){
 
-    document.getElementById("movie_display").innerHTML="<h1> No Movies Available </h1>";
-  }
-  else{ 
-    displaydata(movies);
-  }
+// ----------------------------------------GLOBAL VARIABLES----------------------------------------------------------
+
+let totalpage=Math.ceil(movies.length/10);
+totalpage=document.getElementById("totalPages").innerText=totalpage;
+
+let start=0;
+
+let slicedData=movies.slice(start,start+10);
+displaydata(slicedData);
+
 
 // -----------------------------------------------FUNCTION TO CREATE TABLE----------------------------------------------
 
@@ -22,12 +27,17 @@ function displaydata(movieArr){
 
   document.getElementById("movie_display").innerHTML="";
 
+  let serial=start+1;
+  console.log(serial);
+
   movieArr.forEach((movie,index) => {
 
     let row=document.createElement("tr");
 
     let indexTD=document.createElement("td");
-    indexTD.append(index+1);
+    indexTD.append(serial);
+    serial++;
+
     row.appendChild(indexTD);
 
     let titleTD=document.createElement("td");
@@ -79,10 +89,6 @@ function displaydata(movieArr){
 }
 
 // -----------------------------------------------------FUNCTION TO DISPLAY DATA----------------------------------------------------------
-
-displaydata(movies);
-
-
 
 function openmodel(movieid){
 
@@ -158,7 +164,11 @@ function addmovie(){
   console.log(movies);
   localStorage.setItem("movies",JSON.stringify(movies));
 
-  displaydata(movies);
+  // let start=0;
+  let filteredData=movies;
+  let slicedData=filteredData.slice(start,start+10);
+  displaydata(slicedData);
+  // displaydata(movies);
   closewin("add_movie_float_preview");
   document.getElementById("add_form").reset();
 }
@@ -172,7 +182,11 @@ function deleteData(id){
   })
 
   movies.splice(index,1);
-  displaydata(movies);
+  // let start=0;
+  let filteredData=movies;
+  let slicedData=filteredData.slice(start,start+10);
+  displaydata(slicedData);
+  // displaydata(movies);
   localStorage.setItem("movies",JSON.stringify(movies));
 } 
 
@@ -231,7 +245,12 @@ function updatedata(){
   console.log(dataToUpdate);
   localStorage.setItem("movies",JSON.stringify(movies));
 
-  displaydata(movies);
+  // let start=0;
+  let filteredData=movies;
+  let slicedData=filteredData.slice(start,start+10);
+  displaydata(slicedData);
+
+  // displaydata(movies);
   closewin("update_movie_float_preview");
 }
 
@@ -283,6 +302,8 @@ function capturedropdown(property, value){
 
 function filter(){
 
+  document.getElementById("filter_section").style.marginLeft="-25%" ;
+
   let filteredData=movies;
 
   if(filters.ratings!==null){
@@ -302,8 +323,38 @@ function filter(){
     })
 
   }
-
-  displaydata(filteredData);
-
+  // let start=0;
+  let slicedData=filteredData.slice(start,start+10);
+  displaydata(slicedData);
 
 }
+
+// ---------------------------------------PAGINATION FUNCTION-----------------------------------------
+
+function pageNext(){
+
+  if(start + 10 < movies.length){
+
+    start+=10;
+    let slicedData=movies.slice(start,start+10);
+    let currentPageElement=document.getElementById("currentPage");
+    currentPageElement.innerText = +currentPageElement.innerText + 1;      //+ operator is used to convert string to number
+    serial=start+1;
+    displaydata(slicedData);  
+  }
+
+}
+
+function pageBack(){
+
+  if(start >=10){
+
+    start-=10;
+    let slicedData=movies.slice(start,start+10);
+    let currentPageElement=document.getElementById("currentPage");
+    currentPageElement.innerText = +currentPageElement.innerText - 1;
+    serial=start+1;
+    displaydata(slicedData);  
+  }
+}
+
