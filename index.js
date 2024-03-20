@@ -9,7 +9,6 @@ let movies = [];
       localStorage.setItem("movies",JSON.stringify(movies));
     }
 
-
 // ----------------------------------------GLOBAL VARIABLES----------------------------------------------------------
 
 let totalpage=Math.ceil(movies.length/10);
