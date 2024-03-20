@@ -277,3 +277,33 @@ function capturedropdown(property, value){
   }
   console.log(filters);
 }
+
+
+// ---------------------------------------Filter Function--------------------------------------------------------
+
+function filter(){
+
+  let filteredData=movies;
+
+  if(filters.ratings!==null){
+
+    filteredData=filteredData.filter((product,index)=> {
+
+      return Math.floor(Number(product.imdbRating))<=Math.floor(Number(filters.ratings));
+
+    })
+  }
+
+  if(filters.genre!==null){
+
+    filteredData=filteredData.filter((product,index)=>{
+
+      return product.genres.includes(filters.genre)
+    })
+
+  }
+
+  displaydata(filteredData);
+
+
+}
