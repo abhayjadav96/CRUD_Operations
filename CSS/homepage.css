@@ -8,54 +8,125 @@
 
     width: 100%;
     padding: 50px 50px;
-    /* background-color: rgb(157, 0, 0); */
-
 }
 
-.title{
+.mainMovieHolder{
 
-    font-size: 40px;
-    font-family: 'Segoe UI';
-    font-weight: 600;
-    margin-left: 40px;
-}
-
-.movie_holder{
-
-    width: 100%;
-    padding: 0px 20px;
-    margin-top: 20px;
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
 
 }
 
 
-.movie_frame_holder{
+.test_container{
 
-    padding: 0px 20px;
-    column-gap: 20px;
-    width: 20%;
+    padding: 50px 20px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.movie_poster_holder{
+.test_card{
 
-    overflow: hidden;
     height: 350px;
+    background:linear-gradient(to right bottom, #A9C9FF 0%, #FFBBEC 100%); 
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    transition: .5s;
 }
 
-.movie_poster_holder:hover{
+.img_holder{
 
-    cursor: pointer;
+    width: 30%;
+    padding: 50px 20px;
+
+}
+
+img{
+
+    object-fit: cover;
+    width: 100%;
 }
 
 
-.movie_title_holder{
+.content_holder{
+
+    width: 70%;
+    height: 250px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 30px;
+
+}
+
+.movie_title{
 
     width: 100%;
-    padding: 0px 5px;
-    font-family: Segoe UI;
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.movie_storyline{
+
+    width: 100%;
+    height: 150px;
+}
+
+.movie_actions{
+
+    width: 100%;
+    height: 50px;
+    display: flex;
+
+}
+
+.duration{
+
+    width: 50%;
+}
+
+.title{
+    padding: 0px 20px;
+    width: 50%;
+    font-family: Segor UI;
+    font-size: 30px;
+    font-weight: 500;
+    /* margin-left: 0; */
+}
+.genres{
+
+    width: 50%;
+}
+
+.rating{
+
+    width: 50%;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+
+.duration{
+
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* ------------------------------ON HOVER------------------------------------- */
+
+
+.test_card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+    scale: 1.025;
 }
