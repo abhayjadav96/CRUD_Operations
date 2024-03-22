@@ -1,0 +1,61 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.main_section{
+
+    width: 100%;
+    padding: 50px 50px;
+    /* background-color: rgb(157, 0, 0); */
+
+}
+
+.title{
+
+    font-size: 40px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.movie_holder{
+
+    width: 100%;
+    padding: 0px 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.movie_frame_holder{
+
+    padding: 0px 20px;
+    column-gap: 20px;
+    width: 20%;
+}
+
+.movie_poster_holder{
+
+    overflow: hidden;
+    height: 350px;
+}
+
+.movie_poster_holder:hover{
+
+    cursor: pointer;
+}
+
+
+.movie_title_holder{
+
+    width: 100%;
+    padding: 0px 5px;
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
