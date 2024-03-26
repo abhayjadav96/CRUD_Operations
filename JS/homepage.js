@@ -86,6 +86,16 @@ function homepageDisplay(arr){
                 durationText.innerHTML="Duration: "+movie.duration+" min" ;
                 durationContainer.appendChild(durationText);
 
+                let submitRatingContainer=document.createElement("div");
+                submitRatingContainer.className="submit_rating";
+                movieActionContainer.append(submitRatingContainer);
+
+                let submitRatingButton=document.createElement("button");
+                submitRatingButton.type="button";
+                submitRatingButton.innerText= "Submit Rating";
+                submitRatingButton.className="SubmitRatingBtn";
+                submitRatingContainer.appendChild(submitRatingButton);
+
         document.querySelector("#movie-list").appendChild(movieFrameDiv); 
         
     });
