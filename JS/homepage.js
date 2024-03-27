@@ -73,10 +73,18 @@ function homepageDisplay(arr){
                 ratingText.innerText="Ratings: ";
                 ratingContainer.appendChild(ratingText);
 
-                let ratingIcon=document.createElement("i");
-                ratingIcon.className="fa-regular";
-                ratingIcon.className="far fa-star";
-                ratingContainer.appendChild(ratingIcon);
+                let starHolder=document.createElement("div");
+                starHolder.className="starsHolders";
+                ratingContainer.appendChild(starHolder);
+
+
+                for(n=1 ;n<=5;n++){
+                
+                  let ratingIcon=document.createElement("i");
+                  ratingIcon.className="fa-regular far fa-star stars";
+
+                  starHolder.appendChild(ratingIcon);
+                }
 
                 let durationContainer=document.createElement("div");
                 durationContainer.className="duration";
@@ -92,8 +100,9 @@ function homepageDisplay(arr){
 
                 let submitRatingButton=document.createElement("button");
                 submitRatingButton.type="button";
-                submitRatingButton.innerText= "Submit Rating";
+                submitRatingButton.innerText= "Add Rating";
                 submitRatingButton.className="SubmitRatingBtn";
+                submitRatingButton.onclick=openWin;
                 submitRatingContainer.appendChild(submitRatingButton);
 
         document.querySelector("#movie-list").appendChild(movieFrameDiv); 
@@ -102,3 +111,43 @@ function homepageDisplay(arr){
 }
 
 homepageDisplay(movies);
+
+// ------------------------FUNCTION TO OPRN/CLOSE WINDOW---------------------------------
+
+
+function closewin(modeel){
+
+  document.getElementById(modeel).style.display="none";  
+
+} 
+
+function openWin(){
+
+  document.getElementById("rating_preview").style.display="flex";
+
+}
+
+function rateStar(event){
+
+let selectedStar= event.target.getAttribute("val-star");
+
+  let stars=document.getElementsByClassName("rate_star");
+
+  for(n=0;n<=selectedStar;n++){
+                  
+    stars[n].style.color="gold";
+  }
+
+}
+
+
+function  removeRateColor(){
+
+  let stars=document.getElementsByClassName("rate_star");
+
+  for(n=0;n<=5;n++){
+                  
+    stars[n].style.color="rgb(132, 132, 132)";
+  }
+
+}

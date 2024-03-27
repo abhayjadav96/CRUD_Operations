@@ -7,6 +7,35 @@
 </head>
 <body>
 
+    <section class="rating_window" id="rating_preview">
+
+        <div class="rating_holder">
+
+            <div class="rating_cross_icon_holder">
+
+                <i class="fa-solid fa-square-xmark rating_cross" onclick="closewin('rating_preview')"></i>
+            </div>
+
+            <h1 class="rating_message">Hey! How did you find it?</h1>
+            <div class="rating_content_holder">
+                <div class="white_star_container">
+                    <i class="fa-solid fa-star rate_star" val-star="0" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i> 
+                    <i class="fa-solid fa-star rate_star" val-star="1" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                    <i class="fa-solid fa-star rate_star" val-star="2" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                    <i class="fa-solid fa-star rate_star" val-star="3" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                    <i class="fa-solid fa-star rate_star" val-star="4" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                </div>
+
+            </div>
+
+            <button class="btn">SUBMIT RATING
+
+            </button>
+
+        </div>
+
+    </section>
+
     <section class="main_section">
 
         <div class="main_header">
@@ -72,8 +101,11 @@ REFRENCE CODE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 <div class="movie_actions">   
 
                     <div class="rating">            
-                        <p>Ratings: </p>                
-                        <i class="fa-regular fa-star"></i>  
+                        <p>Ratings: </p>     
+                        
+                        <div class="star_holder">                                       
+                            <i class="fa-regular fa-star"></i>
+                        </div>  
                     </div>
 
                     <div class="duration">
