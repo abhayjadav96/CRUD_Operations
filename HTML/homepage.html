@@ -19,16 +19,16 @@
             <h1 class="rating_message">Hey! How did you find it?</h1>
             <div class="rating_content_holder">
                 <div class="white_star_container">
-                    <i class="fa-solid fa-star rate_star" val-star="0" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i> 
-                    <i class="fa-solid fa-star rate_star" val-star="1" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
-                    <i class="fa-solid fa-star rate_star" val-star="2" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
-                    <i class="fa-solid fa-star rate_star" val-star="3" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
-                    <i class="fa-solid fa-star rate_star" val-star="4" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                    <i class="fa-solid fa-star rate_star" val-star="0" onclick="selectedStar(event)" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i> 
+                    <i class="fa-solid fa-star rate_star" val-star="1" onclick="selectedStar(event)" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                    <i class="fa-solid fa-star rate_star" val-star="2" onclick="selectedStar(event)" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                    <i class="fa-solid fa-star rate_star" val-star="3" onclick="selectedStar(event)" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
+                    <i class="fa-solid fa-star rate_star" val-star="4" onclick="selectedStar(event)" onmouseout="removeRateColor()" onmouseover="rateStar(event)"></i>
                 </div>
 
             </div>
 
-            <button class="btn">SUBMIT RATING
+            <button class="btn" onclick="updateRatingDB()">SUBMIT RATING
 
             </button>
 

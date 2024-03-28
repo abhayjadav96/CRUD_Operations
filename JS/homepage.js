@@ -102,7 +102,12 @@ function homepageDisplay(arr){
                 submitRatingButton.type="button";
                 submitRatingButton.innerText= "Add Rating";
                 submitRatingButton.className="SubmitRatingBtn";
-                submitRatingButton.onclick=openWin;
+                submitRatingButton.onclick=function(){
+
+                  openWin();
+                  selectedMovieID=movie;
+
+                };
                 submitRatingContainer.appendChild(submitRatingButton);
 
         document.querySelector("#movie-list").appendChild(movieFrameDiv); 
@@ -122,12 +127,16 @@ function closewin(modeel){
 } 
 
 function openWin(){
-
   document.getElementById("rating_preview").style.display="flex";
 
 }
 
+let starStatus=false;
+
+let selectedMovieID=null;
+
 function rateStar(event){
+
 
 let selectedStar= event.target.getAttribute("val-star");
 
@@ -140,14 +149,43 @@ let selectedStar= event.target.getAttribute("val-star");
 
 }
 
+function selectedStar(event){
 
-function  removeRateColor(){
+  if(starStatus===true){
+
+    starStatus=false;
+    removeRateColor();
+  }
+
+  starStatus=true;
+
+  let rating=event.target.getAttribute("val-star");
 
   let stars=document.getElementsByClassName("rate_star");
 
-  for(n=0;n<=5;n++){
+  for(n=0;n<=rating;n++){
                   
-    stars[n].style.color="rgb(132, 132, 132)";
+    stars[n].style.color="gold";
   }
+
+}
+
+
+function removeRateColor(){
+
+  if(starStatus===false){
+
+    let stars=document.getElementsByClassName("rate_star");
+    for(n=0;n<=4;n++){
+      stars[n].style.color="rgb(132, 132, 132)";
+    }
+  }
+
+}
+
+
+function updateRatingDB(){
+
+  console.log(selectedMovieID)
 
 }
