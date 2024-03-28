@@ -73,17 +73,49 @@ function homepageDisplay(arr){
                 ratingText.innerText="Ratings: ";
                 ratingContainer.appendChild(ratingText);
 
-                let starHolder=document.createElement("div");
-                starHolder.className="starsHolders";
-                ratingContainer.appendChild(starHolder);
+                let StarHolder=document.createElement("div");
+                StarHolder.className="whiteYellowStars";
+                ratingContainer.appendChild(StarHolder);
 
+                let WhiteStarHolder=document.createElement("div");
+                WhiteStarHolder.className="White_star_holder";
+                StarHolder.appendChild(WhiteStarHolder);
 
                 for(n=1 ;n<=5;n++){
                 
                   let ratingIcon=document.createElement("i");
-                  ratingIcon.className="fa-regular far fa-star stars";
+                  ratingIcon.className="fa-solid fa-star";
+                  WhiteStarHolder.appendChild(ratingIcon);
+                }
 
-                  starHolder.appendChild(ratingIcon);
+                let YellowStarMainHolder=document.createElement("div");
+                YellowStarMainHolder.className="Yellow_star_main_holder";
+                StarHolder.appendChild(YellowStarMainHolder);
+
+                let YellowStarHolder=document.createElement("div");
+                YellowStarHolder.className="Yellow_star_holder";
+                YellowStarMainHolder.appendChild(YellowStarHolder);
+
+                for(n=1 ;n<=5;n++){
+                
+                  let ratingIcon=document.createElement("i");
+                  ratingIcon.className="fa-solid fa-star";
+                  ratingIcon.style.color='gold';
+                  YellowStarHolder.appendChild(ratingIcon);
+                }
+
+                let displayRating=document.createElement("span");
+                if(movie.ratings.length===0){
+
+                  displayRating.innerText='(0)';
+                  ratingContainer.appendChild(displayRating);
+                }
+                else{
+
+                  let avgrating=avgRating(movie.ratings)
+                  displayRating.innerHTML=`(${avgrating.toFixed(1)})`;
+                  YellowStarMainHolder.style.width=avgrating*20+'%';
+                  ratingContainer.appendChild(displayRating);
                 }
 
                 let durationContainer=document.createElement("div");
@@ -95,7 +127,6 @@ function homepageDisplay(arr){
                 durationContainer.appendChild(durationText);
 
                 let submitRatingContainer=document.createElement("div");
-                submitRatingContainer.className="submit_rating";
                 movieActionContainer.append(submitRatingContainer);
 
                 let submitRatingButton=document.createElement("button");
@@ -135,6 +166,8 @@ let starStatus=false;
 
 let selectedMovieID=null;
 
+let rating=null;
+
 function rateStar(event){
 
 
@@ -159,7 +192,7 @@ function selectedStar(event){
 
   starStatus=true;
 
-  let rating=event.target.getAttribute("val-star");
+  rating=event.target.getAttribute("val-star");
 
   let stars=document.getElementsByClassName("rate_star");
 
@@ -187,5 +220,20 @@ function removeRateColor(){
 function updateRatingDB(){
 
   console.log(selectedMovieID);
-
+  selectedMovieID.ratings.push(Number(rating));
+  localStorage.setItem("movies",JSON.stringify(movies));
 }
+
+
+function avgRating(arr){
+
+  let sum=0;
+
+  arr.forEach((num, index)=>{
+
+    sum+=num;
+  })
+
+  return  (sum/arr.length);
+}
+
