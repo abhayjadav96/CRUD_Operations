@@ -186,6 +186,6 @@ function removeRateColor(){
 
 function updateRatingDB(){
 
-  console.log(selectedMovieID)
+  console.log(selectedMovieID);
 
 }
