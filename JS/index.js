@@ -123,7 +123,7 @@ function openAddMovieModel(){
 
 }
 
-// ---------------------------------------------------dATE cONVERSION----------------------------------------------------
+// ---------------------------------------------------Date cONVERSION----------------------------------------------------
 
 function converttodate(){
 
@@ -214,7 +214,7 @@ function updatemodel(id){
 
   let actors="";
   movieid.actors.forEach((actor,index)=>{
-    actors+= actor+ " , ";
+    actors+= actor+ " ,";
   })
 
   document.getElementById("UpdateMovieTitle").value=movieid.title;
