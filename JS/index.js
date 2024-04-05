@@ -166,8 +166,8 @@ function addmovie(){
   // let start=0;
   let filteredData=movies;
   let slicedData=filteredData.slice(start,start+10);
+  alert("New Movie Added");
   displaydata(slicedData);
-  // displaydata(movies);
   closewin("add_movie_float_preview");
   document.getElementById("add_form").reset();
 }
@@ -184,8 +184,8 @@ function deleteData(id){
   // let start=0;
   let filteredData=movies;
   let slicedData=filteredData.slice(start,start+10);
+  alert("Movie Deleted");
   displaydata(slicedData);
-  // displaydata(movies);
   localStorage.setItem("movies",JSON.stringify(movies));
 } 
 
@@ -248,6 +248,7 @@ function updatedata(){
   let filteredData=movies;
   let slicedData=filteredData.slice(start,start+10);
   displaydata(slicedData);
+  alert("Movie Updated");
 
   // displaydata(movies);
   closewin("update_movie_float_preview");
