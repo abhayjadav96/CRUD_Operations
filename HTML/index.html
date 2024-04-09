@@ -7,13 +7,13 @@
 </head>
 <body>
 
-    <section class="float_preview_container" id="float_preview">
+    <section class="float_preview_container" id="float_preview" onclick="closewin('float_preview', event.target.id)">
 
         <div class="float_preview_holder">
 
             <div class="close_btn">
 
-                <i onclick="closewin('float_preview')" class="fa-solid fa-circle-xmark"></i>
+                <i onclick="closewin('float_preview', targetID=true)" class="fa-solid fa-circle-xmark"></i>
 
             </div>
 
@@ -72,13 +72,13 @@
 
     </section>
 
-    <section class="add_movie_main" id="add_movie_float_preview">
+    <section class="add_movie_main" id="add_movie_float_preview" onclick="closewin('add_movie_float_preview',event.target.id)">
 
         <div class="add_movie_holder">
 
             <div class="close_btn">
 
-                <i onclick="closewin('add_movie_float_preview')" class="fa-solid fa-circle-xmark"></i>
+                <i onclick="closewin('add_movie_float_preview', targetID=true)" class="fa-solid fa-circle-xmark"></i>
 
             </div>
 
@@ -110,13 +110,13 @@
 
 
 
-    <section class="add_movie_main" id="update_movie_float_preview">
+    <section class="add_movie_main" id="update_movie_float_preview" onclick="closewin('update_movie_float_preview',event.target.id)">
 
         <div class="update_movie_holder">
 
             <div class="close_btn">
 
-                <i onclick="closewin('update_movie_float_preview')" class="fa-solid fa-circle-xmark"></i>
+                <i onclick="closewin('update_movie_float_preview', targetID=true )" class="fa-solid fa-circle-xmark"></i>
 
             </div>
 

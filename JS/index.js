@@ -111,9 +111,11 @@ function openmodel(movieid){
 
 // -------------------------------  open& close -----------------------------------------------------------------------------
 
-function closewin(modeel){
+function closewin(modeel, targetID=false){
 
-  document.getElementById(modeel).style.display="none";  
+  if(modeel==targetID || targetID==true){
+    document.getElementById(modeel).style.display="none";  
+  }
 
 } 
 
